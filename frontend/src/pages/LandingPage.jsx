@@ -24,7 +24,7 @@ const LandingPage = () => {
     setIsLoading(true);
     try {
       const res = await startStream(rtspUrl);
-      setHlsUrl(`https://live-stream-web-app-xi.vercel.app/${res.data.hls_url}`);
+      setHlsUrl(`https://livestream-webapp2.onrender.com${res.data.hls_url}`);
     } catch (error) {
       console.error("Error starting stream:", error);
       alert("Failed to start stream. Please check the RTSP URL and try again.");
