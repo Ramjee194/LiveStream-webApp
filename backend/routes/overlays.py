@@ -3,8 +3,12 @@ from pymongo import MongoClient
 import os
 from bson import json_util
 import json
+from flask_cors import CORS  # ✅ Add this import
 
 overlays_bp = Blueprint("overlays", __name__)
+
+# Enable CORS for this blueprint
+CORS(overlays_bp, origins=["https://livestream-webapp.onrender.com"])  # ✅ Only this line added
 
 # Temporary: Hardcode MongoDB URI (remove this in production)
 MONGO_URI = "mongodb+srv://yadavramjeekumar04_db_user:taCac7SpISZHrPIG@cluster0.rlke4mk.mongodb.net/rtsp_overlay_app?retryWrites=true&w=majority"
